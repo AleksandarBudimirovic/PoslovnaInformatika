@@ -1,47 +1,53 @@
 package com.lama.LamaProject.main;
 
-import static javax.persistence.CascadeType.ALL;
-import static javax.persistence.FetchType.LAZY;
-
-import java.util.HashSet;
-import java.util.Set;
-
 import javax.persistence.CascadeType;
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
-import javax.persistence.OneToMany;
+
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-
-
 @Entity
 @Getter @Setter @NoArgsConstructor @AllArgsConstructor
-public class GrupaRobe {
+public class StavkaIzlaznaFaktura {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private long id;
 
-	private String naziv;
+	private double cena;
 
-	@OneToMany(cascade = { ALL }, fetch = LAZY, mappedBy = "grupaRobe")
-	private Set<Roba> robe = new HashSet<>();
+	private long kolicina;
+
+	@Column(name = "osnovica_pdv")
+	private double osnovicaPDV;
+
+	@Column(name = "procenat_pdv")
+	private double procenatPDV;
+
+	@Column(name = "iznos_pdv")
+	private double iznosPDV;
+
+	private double rabat;
+
+	@Column(name = "ukupan_iznos")
+	private double ukupanIznos;
 
 	@ManyToOne(cascade = CascadeType.ALL)
-	@JoinColumn(name = "preduzece_id")
-	private Preduzece preduzece;
+	@JoinColumn(name = "roba_id")
+	private Roba roba;
 
-	@ManyToOne(cascade = CascadeType.ALL)
-	@JoinColumn(name = "pdv_id")
-	private Pdv pdv;
+	@ManyToOne(cascade = CascadeType.MERGE)
+	@JoinColumn(name = "faktura_id")
+	private IzlaznaFaktura faktura;
 
 	private boolean obrisano;
 
