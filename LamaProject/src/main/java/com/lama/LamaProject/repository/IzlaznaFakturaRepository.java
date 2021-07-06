@@ -1,5 +1,9 @@
 package com.lama.LamaProject.repository;
 
-public class IzlaznaFakturaRepository {
+import org.springframework.data.jpa.repository.JpaRepository;
+
+import com.lama.LamaProject.main.IzlaznaFaktura;
+
+public interface IzlaznaFakturaRepository extends JpaRepository<IzlaznaFaktura, Long> {
 
 }
