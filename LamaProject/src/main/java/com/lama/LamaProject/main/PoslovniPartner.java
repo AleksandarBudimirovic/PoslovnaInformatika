@@ -15,8 +15,6 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 
-
-
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -35,8 +33,8 @@ public class PoslovniPartner {
 	@Column(name = "naziv_poslovnog_partnera")
 	private String nazivPoslovnogPartnera;
 
-	//@Column(name = "tip_poslovnog_partnera")
-	//private TipPoslovnogPartnera tipPoslovnogPartnera; 
+	@Column(name = "tip_poslovnog_partnera")
+	private TipPoslovnogPartnera tipPoslovnogPartnera; 
 
 	private String PIB;
 
@@ -63,6 +61,28 @@ public class PoslovniPartner {
 	private Set<Cenovnik> cenovnici = new HashSet<>();
 
 	private boolean obrisano;
+	
+	public enum TipPoslovnogPartnera {
+		KUPAC(0), DOBAVLJAC(1);
+
+		private int value;
+		private static Map map = new HashMap<>();
+
+		private TipPoslovnogPartnera(int value) {
+			this.value = value;
+		}
+		static {
+			for (TipPoslovnogPartnera tipPoslovnogPartnera : TipPoslovnogPartnera.values()) {
+				map.put(tipPoslovnogPartnera.value, tipPoslovnogPartnera);
+			}
+		}
+		public static TipPoslovnogPartnera valueOf(int tip) {
+			return (TipPoslovnogPartnera) map.get(tip);
+		}
+		public int getValue() {
+			return value;
+		}
+	}
 	
 	
 	
