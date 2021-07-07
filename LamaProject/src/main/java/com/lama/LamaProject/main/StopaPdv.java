@@ -3,18 +3,22 @@ package com.lama.LamaProject.main;
 import static javax.persistence.CascadeType.ALL;
 import static javax.persistence.FetchType.LAZY;
 
+import java.util.Date;
 import java.util.HashSet;
 import java.util.Set;
 
 import javax.persistence.CascadeType;
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 
-import org.hibernate.annotations.OnDelete;
-import org.hibernate.annotations.OnDeleteAction;
+import org.hibernate.annotations.Where;
+import org.springframework.format.annotation.DateTimeFormat;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -23,20 +27,23 @@ import lombok.Setter;
 
 @Entity
 @Getter @Setter @NoArgsConstructor @AllArgsConstructor
+@Where(clause = "obrisano='false'")
 
-public class Pdv {
+public class StopaPdv {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private long id;
 
-	private String vrstaPdv;
+	private double procenat;
 
-	@OneToMany(mappedBy = "pdv", cascade = CascadeType.ALL)
-	private Set<StopaPdv> stopePdv = new HashSet<StopaPdv>();
-	
-	@OneToMany(cascade = { ALL }, fetch = LAZY, mappedBy = "pdv")
-	private Set<GrupaRobe> grupeRobe = new HashSet<GrupaRobe>();
+	@Column(name = "rok_vazenja")
+	@DateTimeFormat(pattern = "yyyy-MM-dd")
+	private Date rokVazenja;
+
+	@ManyToOne(cascade = CascadeType.ALL)
+	@JoinColumn(name = "pdv_id")
+	private Pdv pdv;
 
 	private boolean obrisano;
 	
