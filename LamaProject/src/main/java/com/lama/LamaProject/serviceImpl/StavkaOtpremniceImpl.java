@@ -36,9 +36,8 @@ public class StavkaOtpremniceImpl implements StavkaOtpremnicaServiceS {
 
 	@Override
 	public void izbrisiStavkuOtpremnice(StavkaOtpremnice stavka) {
-		
+		stavka.setObrisano(true);
+		stavkaOtpremniceRepository.save(stavka);
 		
 	}
-
-
 }

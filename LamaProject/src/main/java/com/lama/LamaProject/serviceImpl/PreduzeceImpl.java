@@ -30,7 +30,6 @@ public class PreduzeceImpl implements PreduzeceServiceS {
 
 	@Override
 	public void save(Preduzece preduzece) {
-		
 		preduzeceRepository.save(preduzece);
 		
 	}

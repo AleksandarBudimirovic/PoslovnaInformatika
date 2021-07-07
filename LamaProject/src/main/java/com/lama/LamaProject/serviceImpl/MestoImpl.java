@@ -47,7 +47,8 @@ public class MestoImpl implements MestoServiceS {
 
 	@Override
 	public void izbrisiMesto(Mesto mesto) {
-		
+		mesto.setObrisano(true);
+		poslovniPartnerService.izbrisiPoslovnogPartneraByMestoId(mesto.getId());
+		mestoRepository.save(mesto);
 	}
-
 }

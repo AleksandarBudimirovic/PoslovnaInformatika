@@ -30,7 +30,7 @@ public class MestoController {
 	@Autowired
 	MestoToMestoDTO mestoToMestoDTO;
 	
-	
+
 	@GetMapping("/mesto")
 	public String vratiSvaMesta(Model model) {
 		List<Mesto> listaMesta = mestoService.findAll();
