@@ -50,9 +50,6 @@ public class CenovnikDTO {
 		return Id;
 	}
 
-	public void setId(Long id) {
-		Id = id;
-	}
 
 	public Date getPocetakRokaTrajanja() {
 		return pocetakRokaTrajanja;

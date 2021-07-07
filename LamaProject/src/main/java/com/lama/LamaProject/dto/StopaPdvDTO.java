@@ -48,9 +48,6 @@ public class StopaPdvDTO {
 		return id;
 	}
 
-	public void setId(long id) {
-		this.id = id;
-	}
 
 	public double getProcenat() {
 		return procenat;

@@ -42,9 +42,6 @@ public class StavkaCenovnikaDTO {
 		return id;
 	}
 
-	public void setId(long id) {
-		this.id = id;
-	}
 
 	public float getCena() {
 		return cena;
