@@ -1,6 +1,14 @@
 package com.lama.LamaProject.dto;
 
 import java.util.Date;
+import java.util.HashSet;
+import java.util.Set;
+
+import com.lama.LamaProject.main.Otpremnica;
+import com.lama.LamaProject.main.PoslovnaGodina;
+import com.lama.LamaProject.main.PoslovniPartner;
+import com.lama.LamaProject.main.Preduzece;
+import com.lama.LamaProject.main.StavkaIzlaznaFaktura;
 
 public class IzlaznaFakturaDTO {
 
@@ -8,38 +16,55 @@ public class IzlaznaFakturaDTO {
 	private long brojFakture;
 	private Date datumFakture;
 	private Date datumValute;
-	private boolean vrstaFakture;
 	private double osnovica;
 	private double ukupanPdv;
 	private double rabat;
 	private double iznosZaPlacanje;
 	private boolean placeno;
+	private boolean vrstaFakture;
+	
+	private PoslovnaGodina poslovnaGodina;
+	
+	private PoslovniPartner poslovniPartner;
+	
+	private Preduzece preduzece;
+
+	private Otpremnica otpremnica;
+
+	private Set<StavkaIzlaznaFaktura> stavkeIzlazneFakture = new HashSet<>();
 	
 	public IzlaznaFakturaDTO() {
 		super();
 	}
 
-	public IzlaznaFakturaDTO(Long id, long brojFakture, Date datumFakture, Date datumValute, boolean vrstaFakture,
-			double osnovica, double ukupanPdv, double rabat, double iznosZaPlacanje, boolean placeno) {
+	
+
+	public IzlaznaFakturaDTO(Long id, long brojFakture, Date datumFakture, Date datumValute, double osnovica,
+			double ukupanPdv, double rabat, double iznosZaPlacanje, boolean placeno, boolean vrstaFakture,
+			PoslovnaGodina poslovnaGodina, PoslovniPartner poslovniPartner, Preduzece preduzece, Otpremnica otpremnica,
+			Set<StavkaIzlaznaFaktura> stavkeIzlazneFakture) {
 		super();
 		this.id = id;
 		this.brojFakture = brojFakture;
 		this.datumFakture = datumFakture;
 		this.datumValute = datumValute;
-		this.vrstaFakture = vrstaFakture;
 		this.osnovica = osnovica;
 		this.ukupanPdv = ukupanPdv;
 		this.rabat = rabat;
 		this.iznosZaPlacanje = iznosZaPlacanje;
 		this.placeno = placeno;
+		this.vrstaFakture = vrstaFakture;
+		this.poslovnaGodina = poslovnaGodina;
+		this.poslovniPartner = poslovniPartner;
+		this.preduzece = preduzece;
+		this.otpremnica = otpremnica;
+		this.stavkeIzlazneFakture = stavkeIzlazneFakture;
 	}
+
+
 
 	public Long getId() {
 		return id;
-	}
-
-	public void setId(Long id) {
-		this.id = id;
 	}
 
 	public long getBrojFakture() {
@@ -64,14 +89,6 @@ public class IzlaznaFakturaDTO {
 
 	public void setDatumValute(Date datumValute) {
 		this.datumValute = datumValute;
-	}
-
-	public boolean isVrstaFakture() {
-		return vrstaFakture;
-	}
-
-	public void setVrstaFakture(boolean vrstaFakture) {
-		this.vrstaFakture = vrstaFakture;
 	}
 
 	public double getOsnovica() {
@@ -113,6 +130,82 @@ public class IzlaznaFakturaDTO {
 	public void setPlaceno(boolean placeno) {
 		this.placeno = placeno;
 	}
+
+	public boolean isVrstaFakture() {
+		return vrstaFakture;
+	}
+
+	public void setVrstaFakture(boolean vrstaFakture) {
+		this.vrstaFakture = vrstaFakture;
+	}
+
+	public void setId(Long id) {
+		this.id = id;
+	}
+
+
+
+	public PoslovnaGodina getPoslovnaGodina() {
+		return poslovnaGodina;
+	}
+
+
+
+	public void setPoslovnaGodina(PoslovnaGodina poslovnaGodina) {
+		this.poslovnaGodina = poslovnaGodina;
+	}
+
+
+
+	public PoslovniPartner getPoslovniPartner() {
+		return poslovniPartner;
+	}
+
+
+
+	public void setPoslovniPartner(PoslovniPartner poslovniPartner) {
+		this.poslovniPartner = poslovniPartner;
+	}
+
+
+
+	public Preduzece getPreduzece() {
+		return preduzece;
+	}
+
+
+
+	public void setPreduzece(Preduzece preduzece) {
+		this.preduzece = preduzece;
+	}
+
+
+
+	public Otpremnica getOtpremnica() {
+		return otpremnica;
+	}
+
+
+
+	public void setOtpremnica(Otpremnica otpremnica) {
+		this.otpremnica = otpremnica;
+	}
+
+
+
+	public Set<StavkaIzlaznaFaktura> getStavkeIzlazneFakture() {
+		return stavkeIzlazneFakture;
+	}
+
+
+
+	public void setStavkeIzlazneFakture(Set<StavkaIzlaznaFaktura> stavkeIzlazneFakture) {
+		this.stavkeIzlazneFakture = stavkeIzlazneFakture;
+	}
+	
+	
+	
+	
 	
 	
 	

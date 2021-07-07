@@ -10,21 +10,12 @@ import com.lama.LamaProject.repository.IzlaznaFakturaRepository;
 import com.lama.LamaProject.serviceImpl.IzlaznaFakturaImpl;
 
 @Service
-public class IzlaznaFakturaService implements IzlaznaFakturaImpl{
+public interface IzlaznaFakturaService  {
 
-	@Autowired
-	IzlaznaFakturaRepository izlaznaFakturaRepository;
-	
-	public void update(IzlaznaFaktura izlaznaFaktura) {
-		}
-	
-	@Override
-	public void save(IzlaznaFaktura izlaznaFaktura) {
-		izlaznaFakturaRepository.save(izlaznaFaktura);
-		}
+	void save(IzlaznaFaktura izlaznaFaktura);
 
-	@Override
-	public List<IzlaznaFaktura> findAll() {
-		return izlaznaFakturaRepository.findAll();
-	}
+	void update(IzlaznaFaktura izlaznaFaktura);
+
+	List<IzlaznaFaktura> findAll();
+	
 }

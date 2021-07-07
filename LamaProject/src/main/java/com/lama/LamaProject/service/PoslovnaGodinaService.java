@@ -7,4 +7,5 @@ import com.lama.LamaProject.main.PoslovnaGodina;
 public interface PoslovnaGodinaService {
 
 	List<PoslovnaGodina> findAll();
+	List<PoslovnaGodina> findByZakljucenaGodinaIsFalseAndObrisanoIsFalse();
 }
