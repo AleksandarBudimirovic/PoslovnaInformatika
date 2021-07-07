@@ -20,7 +20,7 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-
+//samo komitovanje jer eklipsa nesto stvara prblem pa da se resi oko novih dodavanja
 @Entity
 @Getter @Setter @NoArgsConstructor @AllArgsConstructor
 public class GrupaRobe {
