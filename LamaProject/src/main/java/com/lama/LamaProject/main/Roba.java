@@ -38,7 +38,7 @@ public class Roba {
 	private GrupaRobe grupaRobe;
 
 	@OneToMany(mappedBy = "roba", cascade = CascadeType.ALL)
-	private Set<StavkeCenovnika> stavkeCenovnika = new HashSet<>();
+	private Set<StavkaCenovnika> stavkeCenovnika = new HashSet<>();
 
 	@OneToMany(mappedBy = "roba", cascade = CascadeType.ALL)
 	private Set<StavkaIzlaznaFaktura> stavkeFakture = new HashSet<>();

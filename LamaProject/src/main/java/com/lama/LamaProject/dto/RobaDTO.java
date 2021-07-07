@@ -5,6 +5,7 @@ import java.util.Set;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.lama.LamaProject.main.GrupaRobe;
+import com.lama.LamaProject.main.StavkaCenovnika;
 import com.lama.LamaProject.main.StavkaIzlaznaFaktura;
 
 import lombok.AllArgsConstructor;
@@ -23,7 +24,7 @@ public class RobaDTO {
 	@JsonIgnore
 	private GrupaRobe grupaRobe;
 	@JsonIgnore
-	private Set<StavkeCenovnika> stavkeCenovnika = new HashSet<>();
+	private Set<StavkaCenovnika> stavkeCenovnika = new HashSet<>();
 	@JsonIgnore
 	private Set<StavkaIzlaznaFaktura> stavkeFakture = new HashSet<>();
 
