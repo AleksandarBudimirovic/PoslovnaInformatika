@@ -23,7 +23,12 @@ public class GrupaRobeImpl implements GrupaRobeServiceS{
 	
 	@Override
 	public GrupaRobe findOne(Long id) {
-		
+		GrupaRobe grupaRobe = grupaRobeRepository.getOne(id);
+		if (grupaRobe != null) {
+			return grupaRobe;
+		} else {
+			throw new RuntimeException("Nije pronadjena grupa robe!");
+		}
 	}
 	
 	
@@ -40,12 +45,17 @@ public class GrupaRobeImpl implements GrupaRobeServiceS{
 	
 	@Override
 	public void izbrisiGrupuRobe(GrupaRobe grupaRobe) {
-		
+		grupaRobe.setObrisano(true);
+		robaService.izbrisiRobuByGrupaRobeId(grupaRobe.getId());
+		grupaRobeRepository.save(grupaRobe);
 	}
 	
 	@Override
 	public void izbrisiGrupuRobeByPdvId(Long pdvId) {	
-		
+		List<GrupaRobe> listaGrupeRobe = grupaRobeRepository.findByPdvId(pdvId);
+		for (GrupaRobe grupaRobe : listaGrupeRobe) {
+			izbrisiGrupuRobe(grupaRobe);
+		}
 		
 	}
 

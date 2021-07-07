@@ -21,10 +21,10 @@ public class PoslovniPartnerImpl implements PoslovniPartnerServiceS {
 	public List<PoslovniPartner> findAll() {
 		return poslovniPartnerRepository.findAll();
 	}
-
+//videti
 	@Override
 	public PoslovniPartner findOne(Long id) {
-		
+		return poslovniPartnerRepository.getOne(id);
 	}
 
 	@Override
@@ -34,12 +34,16 @@ public class PoslovniPartnerImpl implements PoslovniPartnerServiceS {
 	
 	@Override
 	public void izbrisiPoslovnogPartnera(PoslovniPartner poslovniPartner) {	
-		
+		poslovniPartner.setObrisano(true);
+		poslovniPartnerRepository.save(poslovniPartner);
 	}
 
 	@Override
 	public void izbrisiPoslovnogPartneraByMestoId(Long mestoId) {
-		
+		List<PoslovniPartner> listaPoslovnihPartnera = poslovniPartnerRepository.findByMestoId(mestoId);
+		for (PoslovniPartner poslovniPartner : listaPoslovnihPartnera) {
+			izbrisiPoslovnogPartnera(poslovniPartner);
+		}
 	}
 
 }

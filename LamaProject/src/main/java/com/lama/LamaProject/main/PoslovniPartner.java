@@ -83,6 +83,29 @@ public class PoslovniPartner {
 			return value;
 		}
 	}
+	
+	
+	public PoslovniPartner() {
+		super();
+	}
+
+	public PoslovniPartner(long id, String nazivPoslovnogPartnera, TipPoslovnogPartnera tipPoslovnogPartnera,
+			String pIB, String adresa, String tekuciRacun, Preduzece preduzece, Set<Otpremnica> otpremnice,
+			Set<IzlaznaFaktura> fakture, Mesto mesto, Set<Cenovnik> cenovnici, boolean obrisano) {
+		super();
+		this.id = id;
+		this.nazivPoslovnogPartnera = nazivPoslovnogPartnera;
+		this.tipPoslovnogPartnera = tipPoslovnogPartnera;
+		PIB = pIB;
+		this.adresa = adresa;
+		this.tekuciRacun = tekuciRacun;
+		this.preduzece = preduzece;
+		this.otpremnice = otpremnice;
+		this.fakture = fakture;
+		this.mesto = mesto;
+		this.cenovnici = cenovnici;
+		this.obrisano = obrisano;
+	}
 
 	public long getId() {
 		return id;
@@ -108,27 +131,7 @@ public class PoslovniPartner {
 		this.tipPoslovnogPartnera = tipPoslovnogPartnera;
 	}
 
-	public PoslovniPartner() {
-		super();
-	}
-
-	public PoslovniPartner(long id, String nazivPoslovnogPartnera, TipPoslovnogPartnera tipPoslovnogPartnera,
-			String pIB, String adresa, String tekuciRacun, Preduzece preduzece, Set<Otpremnica> otpremnice,
-			Set<IzlaznaFaktura> fakture, Mesto mesto, Set<Cenovnik> cenovnici, boolean obrisano) {
-		super();
-		this.id = id;
-		this.nazivPoslovnogPartnera = nazivPoslovnogPartnera;
-		this.tipPoslovnogPartnera = tipPoslovnogPartnera;
-		PIB = pIB;
-		this.adresa = adresa;
-		this.tekuciRacun = tekuciRacun;
-		this.preduzece = preduzece;
-		this.otpremnice = otpremnice;
-		this.fakture = fakture;
-		this.mesto = mesto;
-		this.cenovnici = cenovnici;
-		this.obrisano = obrisano;
-	}
+	
 
 	public String getPIB() {
 		return PIB;
