@@ -13,5 +13,7 @@ public interface PoslovniPartnerServiceS {
 	void save(PoslovniPartner poslovniPartner);
 	
 	void izbrisiPoslovnogPartnera(PoslovniPartner poslovniPartner);
+	
+	void izbrisiPoslovnogPartneraByMestoId (Long mestoId);
 
 }
