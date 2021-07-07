@@ -46,5 +46,60 @@ public class StopaPdv {
 	private Pdv pdv;
 
 	private boolean obrisano;
+
+	public StopaPdv(long id, double procenat, Date rokVazenja, Pdv pdv, boolean obrisano) {
+		super();
+		this.id = id;
+		this.procenat = procenat;
+		this.rokVazenja = rokVazenja;
+		this.pdv = pdv;
+		this.obrisano = obrisano;
+	}
+
+	public StopaPdv() {
+		super();
+	}
+
+	public long getId() {
+		return id;
+	}
+
+	public void setId(long id) {
+		this.id = id;
+	}
+
+	public double getProcenat() {
+		return procenat;
+	}
+
+	public void setProcenat(double procenat) {
+		this.procenat = procenat;
+	}
+
+	public Date getRokVazenja() {
+		return rokVazenja;
+	}
+
+	public void setRokVazenja(Date rokVazenja) {
+		this.rokVazenja = rokVazenja;
+	}
+
+	public Pdv getPdv() {
+		return pdv;
+	}
+
+	public void setPdv(Pdv pdv) {
+		this.pdv = pdv;
+	}
+
+	public boolean isObrisano() {
+		return obrisano;
+	}
+
+	public void setObrisano(boolean obrisano) {
+		this.obrisano = obrisano;
+	}
+	
+	
 	
 }

@@ -39,5 +39,60 @@ public class Pdv {
 	private Set<GrupaRobe> grupeRobe = new HashSet<GrupaRobe>();
 
 	private boolean obrisano;
+
+	public Pdv(long id, String vrstaPdv, Set<StopaPdv> stopePdv, Set<GrupaRobe> grupeRobe, boolean obrisano) {
+		super();
+		this.id = id;
+		this.vrstaPdv = vrstaPdv;
+		this.stopePdv = stopePdv;
+		this.grupeRobe = grupeRobe;
+		this.obrisano = obrisano;
+	}
+
+	public Pdv() {
+		super();
+	}
+
+	public long getId() {
+		return id;
+	}
+
+	public void setId(long id) {
+		this.id = id;
+	}
+
+	public String getVrstaPdv() {
+		return vrstaPdv;
+	}
+
+	public void setVrstaPdv(String vrstaPdv) {
+		this.vrstaPdv = vrstaPdv;
+	}
+
+	public Set<StopaPdv> getStopePdv() {
+		return stopePdv;
+	}
+
+	public void setStopePdv(Set<StopaPdv> stopePdv) {
+		this.stopePdv = stopePdv;
+	}
+
+	public Set<GrupaRobe> getGrupeRobe() {
+		return grupeRobe;
+	}
+
+	public void setGrupeRobe(Set<GrupaRobe> grupeRobe) {
+		this.grupeRobe = grupeRobe;
+	}
+
+	public boolean isObrisano() {
+		return obrisano;
+	}
+
+	public void setObrisano(boolean obrisano) {
+		this.obrisano = obrisano;
+	}
+	
+	
 	
 }
