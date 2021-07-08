@@ -1,5 +1,7 @@
 package com.lama.LamaProject.controller;
 
+import java.util.Calendar;
+import java.util.Date;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -45,6 +47,9 @@ public class CenovnikController {
 	RobaServiceS robaService;
 	
 	@Autowired
+	StavkaCenovnikaService stavkaCenovnikaService;
+	
+	@Autowired
 	CenovnikToCenovnikDTO cenovnikToCenovnikDTO;
 	
 	@Autowired
@@ -82,5 +87,35 @@ public class CenovnikController {
 		return "dodajCenovnik";
 	}
 	
+	@PostMapping("cenovnik/dodavanje")
+	public String dodajCenovnik(CenovnikDTO cenovnikDto) {
+		List<Preduzece> preduzeca = preduzeceService.findAll();
+		List<Cenovnik> listaCenovnika = cenovnikService.findAll().stream()
+				.filter(c -> c.getPoslovniPartner().getId() == cenovnikDto.getPoslovniPartner().getId())
+				.collect(Collectors.toList());
+		for(Cenovnik c: listaCenovnika) {
+			c.setKrajRokaTrajanja(new Date(Calendar.getInstance().getTimeInMillis()));
+			c.setObrisano(true);
+			cenovnikService.save(c);
+		}
+		
+		Cenovnik cenovnik = cenovnikDTOToCenovnik.konvertujDtoToEntity(cenovnikDto);
+		cenovnik.setPreduzece(preduzeca.get(0));
+		cenovnik.setObrisano(false);
+		cenovnikService.save(cenovnik);
+
+		return "redirect:/cenovnici";
+	}
+	
+	@GetMapping("cenovnik/detalji/{idcenovnika}")
+	public String detaljiCenovnika(Model model, @PathVariable long idcenovnika) {
+		Cenovnik cenovnik = cenovnikService.findOne(idcenovnika);
+		model.addAttribute("listRoba", robaToRobaDTO.konvertujEntityToDto(robaService.findAll()));
+		model.addAttribute("cenovnik", cenovnikToCenovnikDTO.konvertujEntityToDto(cenovnik));
+		List<StavkaCenovnika> stavkeCenovnika = stavkaCenovnikaService.findStavkeCenovnikaByCenovnikId(idcenovnika);
+		List<StavkaCenovnikaDTO> stavkeCenovnikaDto = stavkaCenovnikaToStavkaCenovnikaDTO.konvertujEntityToDto(stavkeCenovnika);
+        model.addAttribute("stavkeCenovnika", stavkeCenovnikaDto);
+		return "cenovnik_detalji";
+	}
 		
 }
