@@ -8,6 +8,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
@@ -70,7 +71,26 @@ public class PoslovniPartnerController {
 
 	}
 	
-/////////azuriranje
+
+	@GetMapping("/poslovniPartneri/azuriraj/{id}")
+	public String vratiPreduzeca(Model model, @PathVariable Long id) {
+		PoslovniPartner poslovniPartner = poslovniPartnerServiceInterface.findOne(id);
+		PoslovniPartnerDTO poslovniPartnerDTO = poslovniPartnertoDto.konvertujEntityToDto(poslovniPartner);
+		List<Mesto> listaMesta = mestoService.findAll();
+		model.addAttribute("listaMesta", mestoToMestoDTO.konvertujEntityToDto(listaMesta));
+		model.addAttribute("poslovniPartner", poslovniPartnerDTO);
+
+		return "azurirajPoslovnogPartnera";
+	}
+
+	@PostMapping("/poslovniPartneri/azuriraj")
+	public String azurirajPoslovnogPartnera(PoslovniPartnerDTO poslovniPartnerDTO) {
+		PoslovniPartner partner = dtoToPoslovniPartner.konvertujDTOToEntity(poslovniPartnerDTO);
+		partner.setPreduzece(preduzeceService.findAll().get(0));
+		poslovniPartnerServiceInterface.save(partner);
+
+		return "redirect:/poslovniPartneri";
+	}
 	
 	
 	

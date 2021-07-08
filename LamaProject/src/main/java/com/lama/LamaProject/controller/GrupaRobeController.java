@@ -5,6 +5,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 
 import com.lama.LamaProject.converter.GrupaRobeDTOToGrupaRobe;
@@ -33,5 +34,17 @@ public class GrupaRobeController {
 		List<GrupaRobeDTO> listaGrupaRobeDTO = grupaRobeToGrupaRobeDTO.konvertujEntityToDto(grupaRobeLista);
 		model.addAttribute("listaGrupaRobe", listaGrupaRobeDTO);
 		return "grupaRobe";
+	}
+	
+	
+	
+	
+	
+	
+	@DeleteMapping("/grupaRobe/izbrisi")
+	public String izbrisiGrupuRobe(Long grupaRobeIdDelete) {
+		GrupaRobe grupaRobe = grupaRobeService.findOne(grupaRobeIdDelete);
+		grupaRobeService.izbrisiGrupuRobe(grupaRobe);
+		return "redirect:/grupaRobe";
 	}
 }
