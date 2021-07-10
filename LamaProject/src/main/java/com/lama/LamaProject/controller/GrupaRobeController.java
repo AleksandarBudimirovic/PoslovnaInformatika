@@ -23,7 +23,6 @@ import com.lama.LamaProject.service.GrupaRobeServiceS;
 import com.lama.LamaProject.service.PdvService;
 import com.lama.LamaProject.service.PreduzeceServiceS;
 
-
 @Controller
 public class GrupaRobeController {
 	
@@ -35,6 +34,18 @@ public class GrupaRobeController {
 	
 	@Autowired
 	private GrupaRobeDTOToGrupaRobe grupaRobeDTOToGrupaRobe;
+	
+	@Autowired
+	private PdvService pdvService;
+	
+	@Autowired
+	private PreduzeceServiceS preduzeceService;
+	
+	@Autowired 
+	private PreduzeceToPreduzeceDTO preduzeceToPreduzeceDTO;
+	
+	@Autowired 
+	private PdvToPdvDTO pdvToPdvDTO;
 	
 	
 	@GetMapping("/grupaRobe")
@@ -52,9 +63,37 @@ public class GrupaRobeController {
 		return "azurirajGrupuRobe";
 	}
 	
+	@DeleteMapping("/grupaRobe/izbrisi")
+	public String izbrisiGrupuRobe(Long grupaRobeIdDelete) {
+		GrupaRobe grupaRobe = grupaRobeService.findOne(grupaRobeIdDelete);
+		grupaRobeService.izbrisiGrupuRobe(grupaRobe);
+		return "redirect:/grupaRobe";
+	}
 	
+	@PutMapping("/grupaRobe/azuriraj")
+	public String azurirajGrupuRobe(GrupaRobeDTO grupaRobeDTO) {
+		grupaRobeService.save(grupaRobeDTOToGrupaRobe.konvertujDtoToEntity(grupaRobeDTO));
+		return "redirect:/grupaRobe";
+	}
 	
+	@GetMapping("/grupaRobe/kreiraj")
+	public String prikaziGrupuRobe(Model model) {
+		GrupaRobeDTO grupaRobeDTO = new GrupaRobeDTO();
+		dodajAtributeUModel(model, grupaRobeDTO);
+		return "kreirajGrupuRobe";
+	}
 	
-
+	@PostMapping("/grupaRobe/kreiraj")
+	public String kreirajGrupuRobe (GrupaRobeDTO grupaRobeDTO) {
+		grupaRobeService.save(grupaRobeDTOToGrupaRobe.konvertujDtoToEntity(grupaRobeDTO));
+		return "redirect:/grupaRobe";
+	}
 	
+	public void dodajAtributeUModel (Model model, GrupaRobeDTO grupaRobeDTO) {
+		List<Preduzece> listaPreduzeca = preduzeceService.findAll();
+		List<Pdv> listaPDV = pdvService.findAll();
+		model.addAttribute("grupaRobe", grupaRobeDTO);
+		model.addAttribute("listaPreduzeca", preduzeceToPreduzeceDTO.konvertujEntityToDto(listaPreduzeca));
+		model.addAttribute("listaPdv", pdvToPdvDTO.konvertujEntityToDto(listaPDV));
+	}
 }
