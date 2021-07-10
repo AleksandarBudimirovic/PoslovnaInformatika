@@ -15,6 +15,8 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 
+import org.hibernate.annotations.Where;
+
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -22,6 +24,7 @@ import lombok.Setter;
 
 //samo komitovanje jer eklipsa nesto stvara prblem pa da se resi oko novih dodavanja
 @Entity
+@Where(clause = "obrisano='false'")
 @Getter @Setter @NoArgsConstructor @AllArgsConstructor
 public class GrupaRobe {
 	
