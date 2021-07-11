@@ -18,4 +18,5 @@ public interface IzlaznaFakturaService  {
 
 	List<IzlaznaFaktura> findAll();
 	
+	IzlaznaFaktura getOne(long idIzlazneFakture);
 }

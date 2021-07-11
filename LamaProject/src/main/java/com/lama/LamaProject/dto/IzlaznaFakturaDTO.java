@@ -10,6 +10,15 @@ import com.lama.LamaProject.main.PoslovniPartner;
 import com.lama.LamaProject.main.Preduzece;
 import com.lama.LamaProject.main.StavkaIzlaznaFaktura;
 
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+
+@Getter
+@Setter 
+@NoArgsConstructor
+@AllArgsConstructor
 public class IzlaznaFakturaDTO {
 
 	private Long id;

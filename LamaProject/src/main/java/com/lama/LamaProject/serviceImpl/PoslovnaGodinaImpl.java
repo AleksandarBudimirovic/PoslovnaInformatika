@@ -17,10 +17,13 @@ public class PoslovnaGodinaImpl implements PoslovnaGodinaService {
 	public List<PoslovnaGodina> findAll() {
 		return poslovnaGodinaRepository.findAll();
 	}
-	
 	@Override
 	public List<PoslovnaGodina> findByZakljucenaGodinaIsFalseAndObrisanoIsFalse() {
 		return poslovnaGodinaRepository.findByZakljucenaGodinaIsFalseAndObrisanoIsFalse();
 	}
 
+	@Override
+	public PoslovnaGodina getOne(long id) {
+		return poslovnaGodinaRepository.getOne(id);
+	}
 }

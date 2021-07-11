@@ -2,15 +2,14 @@ package com.lama.LamaProject.serviceImpl;
 
 import java.util.List;
 
+import javax.transaction.Transactional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.lama.LamaProject.main.IzlaznaFaktura;
-import com.lama.LamaProject.main.PoslovnaGodina;
 import com.lama.LamaProject.main.StavkaIzlaznaFaktura;
 import com.lama.LamaProject.repository.IzlaznaFakturaRepository;
-import com.lama.LamaProject.repository.PoslovnaGodinaRepository;
 import com.lama.LamaProject.service.IzlaznaFakturaService;
 
 
@@ -45,5 +44,10 @@ public class IzlaznaFakturaImpl implements IzlaznaFakturaService{
 		return izlaznaFakturaRepository.findAll();
 	}
 	
+	@Override
+	@Transactional
+	public IzlaznaFaktura getOne(long idIzlazneFakture) {
+		return izlaznaFakturaRepository.getOne(idIzlazneFakture);
+	}
 
 }

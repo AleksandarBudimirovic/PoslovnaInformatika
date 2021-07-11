@@ -5,10 +5,12 @@ import java.util.HashSet;
 import java.util.Set;
 
 import javax.persistence.CascadeType;
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 
@@ -27,26 +29,39 @@ public class IzlaznaFaktura {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
+	@Column(name = "broj_fakture")
 	private long brojFakture;
+	@Column(name = "datum_fakture")
 	private Date datumFakture;
+	@Column(name = "datum_valute")
 	private Date datumValute;
+	@Column(name = "osnovica")
 	private double osnovica;
+	@Column(name = "ukupan_pdv")
 	private double ukupanPdv;
+	@Column(name = "rabat")
 	private double rabat;
+	@Column(name = "iznos_za_placanje")
 	private double iznosZaPlacanje;
+	@Column(name = "placeno")
 	private boolean placeno;
+	@Column(name = "vrsta_fakture")
 	private boolean vrstaFakture;
 	
 	@ManyToOne(cascade = CascadeType.ALL)
+	@JoinColumn(name = "poslovna_godina_if")
 	private PoslovnaGodina poslovnaGodina;
 
 	@ManyToOne(cascade = CascadeType.ALL)
+	@JoinColumn(name = "poslovni_partner_if")
 	private PoslovniPartner poslovniPartner;
 
 	@ManyToOne(cascade = CascadeType.ALL)
+	@JoinColumn(name = "preduzece_if")
 	private Preduzece preduzece;
 
 	@ManyToOne(cascade = CascadeType.MERGE)
+	@JoinColumn(name = "otpremnica_if")
 	private Otpremnica otpremnica;
 
 	@OneToMany(mappedBy = "faktura", cascade = CascadeType.ALL)

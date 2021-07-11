@@ -6,6 +6,15 @@ import java.util.Set;
 import com.lama.LamaProject.main.IzlaznaFaktura;
 import com.lama.LamaProject.main.Otpremnica;
 
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+
+@Getter
+@Setter 
+@NoArgsConstructor
+@AllArgsConstructor
 public class PoslovnaGodinaDTO {
 
 	private long id;
