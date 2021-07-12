@@ -11,5 +11,5 @@ import com.lama.LamaProject.main.Otpremnica;
 @Repository
 public interface OtpremnicaRepository extends JpaRepository<Otpremnica, Long> {
 	
-    List<Otpremnica> findAllOtpremnice();
+    //List<Otpremnica> findAllOtpremnice();
 }

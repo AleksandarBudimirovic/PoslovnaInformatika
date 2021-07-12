@@ -21,7 +21,7 @@ public class StavkaOtpremniceImpl implements StavkaOtpremnicaServiceS {
 
 	@Override
 	public List<StavkaOtpremnice> findAll() {
-		return stavkaOtpremniceRepository.findAllOtpremnice();
+		return stavkaOtpremniceRepository.findAll();
 	}
 
 	@Override

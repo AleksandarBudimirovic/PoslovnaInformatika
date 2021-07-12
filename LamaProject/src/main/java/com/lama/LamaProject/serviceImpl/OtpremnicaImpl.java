@@ -42,7 +42,7 @@ public class OtpremnicaImpl implements OtpremnicaServiceS {
 	@Override
 	@Transactional(readOnly = true)
 	public List<Otpremnica> findAll() {
-		return otpremnicaRepository.findAllOtpremnice();
+		return otpremnicaRepository.findAll();
 	}
 
 	@Override

@@ -71,4 +71,4 @@ INSERT INTO `poslovnaLamadb`.`stavke_cenovnika` (`cena`, `cenovnik_id`, `obrisan
 INSERT INTO `poslovnaLamadb`.`stavke_cenovnika` (`cena`, `cenovnik_id`, `obrisano`, `roba_id`) VALUES (45000, 3, false, 5);
 INSERT INTO `poslovnaLamadb`.`stavke_cenovnika` (`cena`, `cenovnik_id`, `obrisano`, `roba_id`) VALUES (21000, 3, false, 6);
 
-INSERT INTO `poslovnaLamadb`.`otpremnica` (broj_otpremine, datum_otpremnice, tip_otpremnice, racun_otpremnice, obrisano, poslovna_godina_id,  poslovni_partner_id, preduzece_id) VALUES ( 1, '2022-11-11', false, 72818,1,1,1);
+INSERT INTO `poslovnaLamadb`.`otpremnica` (brojOtpremnice, datum_otpremnice, tip_otpremnice, racun_otpremnice, obrisano, poslovna_godina_id,  poslovni_partner_id, preduzece_id) VALUES ( 1, '2022-11-11', false, 72818,1,1,1);

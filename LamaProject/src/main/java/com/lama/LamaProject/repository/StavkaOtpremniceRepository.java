@@ -11,5 +11,5 @@ import com.lama.LamaProject.main.StavkaOtpremnice;
 @Repository
 public interface StavkaOtpremniceRepository extends JpaRepository<StavkaOtpremnice, Long> {
 	
-	List<StavkaOtpremnice> findAllOtpremnice();
+	//List<StavkaOtpremnice> findAllOtpremnice();
 }
