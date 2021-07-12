@@ -50,23 +50,25 @@ INSERT INTO `poslovnaLamadb`.`cenovnik` (`kraj_roka_trajanja`, `obrisano`, `poce
 
 INSERT INTO `poslovnaLamadb`.`poslovna_godina` (`godina_poslovanja`, `obrisano`, `zakljucena_godina`) VALUES ('2021', false, false);
 
-INSERT INTO `poslovnaLamadb`.`stavke_cenovnika` (`cena`, `cenovnik_id`, `obrisano`, `roba_id`) VALUES ('15000', 1, false, 1);
-INSERT INTO `poslovnaLamadb`.`stavke_cenovnika` (`cena`, `cenovnik_id`, `obrisano`, `roba_id`) VALUES ('20000', 1, false, 2);
-INSERT INTO `poslovnaLamadb`.`stavke_cenovnika` (`cena`, `cenovnik_id`, `obrisano`, `roba_id`) VALUES ('19000', 1, false, 3);
-INSERT INTO `poslovnaLamadb`.`stavke_cenovnika` (`cena`, `cenovnik_id`, `obrisano`, `roba_id`) VALUES ('35000', 1, false, 4);
-INSERT INTO `poslovnaLamadb`.`stavke_cenovnika` (`cena`, `cenovnik_id`, `obrisano`, `roba_id`) VALUES ('45000', 1, false, 5);
-INSERT INTO `poslovnaLamadb`.`stavke_cenovnika` (`cena`, `cenovnik_id`, `obrisano`, `roba_id`) VALUES ('21000', 1, false, 6);
+INSERT INTO `poslovnaLamadb`.`stavke_cenovnika` (`cena`, `cenovnik_id`, `obrisano`, `roba_id`) VALUES (15000, 1, false, 1);
+INSERT INTO `poslovnaLamadb`.`stavke_cenovnika` (`cena`, `cenovnik_id`, `obrisano`, `roba_id`) VALUES (20000, 1, false, 2);
+INSERT INTO `poslovnaLamadb`.`stavke_cenovnika` (`cena`, `cenovnik_id`, `obrisano`, `roba_id`) VALUES (19000, 1, false, 3);
+INSERT INTO `poslovnaLamadb`.`stavke_cenovnika` (`cena`, `cenovnik_id`, `obrisano`, `roba_id`) VALUES (35000, 1, false, 4);
+INSERT INTO `poslovnaLamadb`.`stavke_cenovnika` (`cena`, `cenovnik_id`, `obrisano`, `roba_id`) VALUES (45000, 1, false, 5);
+INSERT INTO `poslovnaLamadb`.`stavke_cenovnika` (`cena`, `cenovnik_id`, `obrisano`, `roba_id`) VALUES (21000, 1, false, 6);
 
-INSERT INTO `poslovnaLamadb`.`stavke_cenovnika` (`cena`, `cenovnik_id`, `obrisano`, `roba_id`) VALUES ('15000', 2, false, 1);
-INSERT INTO `poslovnaLamadb`.`stavke_cenovnika` (`cena`, `cenovnik_id`, `obrisano`, `roba_id`) VALUES ('20000', 2, false, 2);
-INSERT INTO `poslovnaLamadb`.`stavke_cenovnika` (`cena`, `cenovnik_id`, `obrisano`, `roba_id`) VALUES ('19000', 2, false, 3);
-INSERT INTO `poslovnaLamadb`.`stavke_cenovnika` (`cena`, `cenovnik_id`, `obrisano`, `roba_id`) VALUES ('35000', 2, false, 4);
-INSERT INTO `poslovnaLamadb`.`stavke_cenovnika` (`cena`, `cenovnik_id`, `obrisano`, `roba_id`) VALUES ('45000', 2, false, 5);
-INSERT INTO `poslovnaLamadb`.`stavke_cenovnika` (`cena`, `cenovnik_id`, `obrisano`, `roba_id`) VALUES ('21000', 2, false, 6);
+INSERT INTO `poslovnaLamadb`.`stavke_cenovnika` (`cena`, `cenovnik_id`, `obrisano`, `roba_id`) VALUES (15000, 2, false, 1);
+INSERT INTO `poslovnaLamadb`.`stavke_cenovnika` (`cena`, `cenovnik_id`, `obrisano`, `roba_id`) VALUES (20000, 2, false, 2);
+INSERT INTO `poslovnaLamadb`.`stavke_cenovnika` (`cena`, `cenovnik_id`, `obrisano`, `roba_id`) VALUES (19000, 2, false, 3);
+INSERT INTO `poslovnaLamadb`.`stavke_cenovnika` (`cena`, `cenovnik_id`, `obrisano`, `roba_id`) VALUES (35000, 2, false, 4);
+INSERT INTO `poslovnaLamadb`.`stavke_cenovnika` (`cena`, `cenovnik_id`, `obrisano`, `roba_id`) VALUES (45000, 2, false, 5);
+INSERT INTO `poslovnaLamadb`.`stavke_cenovnika` (`cena`, `cenovnik_id`, `obrisano`, `roba_id`) VALUES (21000, 2, false, 6);
 
-INSERT INTO `poslovnaLamadb`.`stavke_cenovnika` (`cena`, `cenovnik_id`, `obrisano`, `roba_id`) VALUES ('15000', 3, false, 1);
-INSERT INTO `poslovnaLamadb`.`stavke_cenovnika` (`cena`, `cenovnik_id`, `obrisano`, `roba_id`) VALUES ('20000', 3, false, 2);
-INSERT INTO `poslovnaLamadb`.`stavke_cenovnika` (`cena`, `cenovnik_id`, `obrisano`, `roba_id`) VALUES ('19000', 3, false, 3);
-INSERT INTO `poslovnaLamadb`.`stavke_cenovnika` (`cena`, `cenovnik_id`, `obrisano`, `roba_id`) VALUES ('35000', 3, false, 4);
-INSERT INTO `poslovnaLamadb`.`stavke_cenovnika` (`cena`, `cenovnik_id`, `obrisano`, `roba_id`) VALUES ('45000', 3, false, 5);
-INSERT INTO `poslovnaLamadb`.`stavke_cenovnika` (`cena`, `cenovnik_id`, `obrisano`, `roba_id`) VALUES ('21000', 3, false, 6);
+INSERT INTO `poslovnaLamadb`.`stavke_cenovnika` (`cena`, `cenovnik_id`, `obrisano`, `roba_id`) VALUES (15000, 3, false, 1);
+INSERT INTO `poslovnaLamadb`.`stavke_cenovnika` (`cena`, `cenovnik_id`, `obrisano`, `roba_id`) VALUES (20000, 3, false, 2);
+INSERT INTO `poslovnaLamadb`.`stavke_cenovnika` (`cena`, `cenovnik_id`, `obrisano`, `roba_id`) VALUES (19000, 3, false, 3);
+INSERT INTO `poslovnaLamadb`.`stavke_cenovnika` (`cena`, `cenovnik_id`, `obrisano`, `roba_id`) VALUES (35000, 3, false, 4);
+INSERT INTO `poslovnaLamadb`.`stavke_cenovnika` (`cena`, `cenovnik_id`, `obrisano`, `roba_id`) VALUES (45000, 3, false, 5);
+INSERT INTO `poslovnaLamadb`.`stavke_cenovnika` (`cena`, `cenovnik_id`, `obrisano`, `roba_id`) VALUES (21000, 3, false, 6);
+
+INSERT INTO `poslovnaLamadb`.`otpremnica` (broj_otpremine, datum_otpremnice, tip_otpremnice, racun_otpremnice, obrisano, poslovna_godina_id,  poslovni_partner_id, preduzece_id) VALUES ( 1, '2022-11-11', false, 72818,1,1,1);

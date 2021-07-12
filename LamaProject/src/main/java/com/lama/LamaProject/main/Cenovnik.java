@@ -6,7 +6,7 @@ import static javax.persistence.FetchType.LAZY;
 import java.util.Date;
 import java.util.HashSet;
 import java.util.Set;
-
+import javax.persistence.Table;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -26,11 +26,12 @@ import lombok.Setter;
 @Entity
 @Getter @Setter @NoArgsConstructor @AllArgsConstructor
 @Where(clause = "obrisano='false'")
-
+@Table(name = "cenovnik")
 public class Cenovnik {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column(name = "cenovnik_id", unique = true, nullable = false)
 	private Long Id;
 
 	@Column(name = "pocetak_roka_trajanja")
@@ -48,12 +49,12 @@ public class Cenovnik {
 	private Preduzece preduzece;
 
 	@OneToMany(cascade = { ALL }, fetch = LAZY, mappedBy = "cenovnik")
-	private Set<StavkaCenovnika> cene = new HashSet<StavkaCenovnika>();
+	private Set<StavkeCenovnika> cene = new HashSet<StavkeCenovnika>();
 
 	private boolean obrisano;
 
 	public Cenovnik(Long id, Date pocetakRokaTrajanja, Date krajRokaTrajanja, PoslovniPartner poslovniPartner,
-			Preduzece preduzece, Set<StavkaCenovnika> cene, boolean obrisano) {
+			Preduzece preduzece, Set<StavkeCenovnika> cene, boolean obrisano) {
 		super();
 		Id = id;
 		this.pocetakRokaTrajanja = pocetakRokaTrajanja;
@@ -108,11 +109,11 @@ public class Cenovnik {
 		this.preduzece = preduzece;
 	}
 
-	public Set<StavkaCenovnika> getCene() {
+	public Set<StavkeCenovnika> getCene() {
 		return cene;
 	}
 
-	public void setCene(Set<StavkaCenovnika> cene) {
+	public void setCene(Set<StavkeCenovnika> cene) {
 		this.cene = cene;
 	}
 

@@ -14,6 +14,7 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
+import javax.persistence.Table;
 
 import org.hibernate.annotations.Where;
 
@@ -26,11 +27,13 @@ import lombok.Setter;
 @Entity
 @Getter @Setter @NoArgsConstructor @AllArgsConstructor
 @Where(clause = "obrisano='false'")
+@Table(name = "poslovni_partner")
 public class PoslovniPartner {
 
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column(name = "poslovni_partner_id", unique = true, nullable = false)
 	private long id;
 
 	@Column(name = "naziv_poslovnog_partnera")

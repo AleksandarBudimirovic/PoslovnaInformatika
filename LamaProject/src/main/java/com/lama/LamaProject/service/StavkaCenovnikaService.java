@@ -2,14 +2,14 @@ package com.lama.LamaProject.service;
 
 import java.util.List;
 
-import com.lama.LamaProject.main.StavkaCenovnika;
+import com.lama.LamaProject.main.StavkeCenovnika;
 
 public interface StavkaCenovnikaService {
 
-	List<StavkaCenovnika> findStavkeCenovnikaByCenovnikId(long id);
+	List<StavkeCenovnika> findStavkeCenovnikaByCenovnikId(long id);
 
-	void save(StavkaCenovnika stavka);
+	void save(StavkeCenovnika stavka);
 
-	List<StavkaCenovnika> findStavkeCenovnikaByRobaId(long id);
+	List<StavkeCenovnika> findStavkeCenovnikaByRobaId(long id);
 	
 }

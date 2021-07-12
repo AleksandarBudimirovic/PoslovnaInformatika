@@ -22,7 +22,7 @@ import com.lama.LamaProject.dto.RobaDTO;
 import com.lama.LamaProject.dto.StavkaCenovnikaDTO;
 import com.lama.LamaProject.main.GrupaRobe;
 import com.lama.LamaProject.main.Roba;
-import com.lama.LamaProject.main.StavkaCenovnika;
+import com.lama.LamaProject.main.StavkeCenovnika;
 import com.lama.LamaProject.service.GrupaRobeServiceS;
 import com.lama.LamaProject.service.RobaServiceS;
 import com.lama.LamaProject.service.StavkaCenovnikaService;
@@ -78,7 +78,7 @@ public class RobaController {
 	@GetMapping("/roba/cena/{id}")
 	@JsonIgnore
 	public @ResponseBody StavkaCenovnikaDTO getCena(@PathVariable("id") long id) {
-			List<StavkaCenovnika> stavkeCenovnika = stavkeCenovnikaService.findStavkeCenovnikaByRobaId(id);
+			List<StavkeCenovnika> stavkeCenovnika = stavkeCenovnikaService.findStavkeCenovnikaByRobaId(id);
 			if(stavkeCenovnika.size() > 0) {
 			List<StavkaCenovnikaDTO> stavke = stavkaCenovnikaToStavkaCenovnikaDTO.konvertujEntityToDto(stavkeCenovnika);
 			return stavke.get(0);

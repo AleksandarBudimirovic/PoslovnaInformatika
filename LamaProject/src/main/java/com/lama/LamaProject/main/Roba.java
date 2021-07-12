@@ -12,6 +12,7 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
+import javax.persistence.Table;
 
 import org.hibernate.annotations.Where;
 
@@ -24,10 +25,12 @@ import lombok.Setter;
 @Entity
 @Getter @Setter @NoArgsConstructor @AllArgsConstructor
 @Where(clause = "obrisano='false'")
+@Table(name = "roba")
 public class Roba {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column(name = "roba_id", unique = true, nullable = false)
 	private long id;
 
 	@Column(name = "naziv_robe")
@@ -41,7 +44,7 @@ public class Roba {
 	private GrupaRobe grupaRobe;
 
 	@OneToMany(mappedBy = "roba", cascade = CascadeType.ALL)
-	private Set<StavkaCenovnika> stavkeCenovnika = new HashSet<>();
+	private Set<StavkeCenovnika> stavkeCenovnika = new HashSet<>();
 
 	@OneToMany(mappedBy = "roba", cascade = CascadeType.ALL)
 	private Set<StavkaIzlaznaFaktura> stavkeFakture = new HashSet<>();
@@ -53,7 +56,7 @@ public class Roba {
 	}
 
 	public Roba(long id, String nazivRobe, String jedinicaMere, GrupaRobe grupaRobe,
-			Set<StavkaCenovnika> stavkeCenovnika, Set<StavkaIzlaznaFaktura> stavkeFakture, boolean obrisano) {
+			Set<StavkeCenovnika> stavkeCenovnika, Set<StavkaIzlaznaFaktura> stavkeFakture, boolean obrisano) {
 		super();
 		this.id = id;
 		this.nazivRobe = nazivRobe;
@@ -96,11 +99,11 @@ public class Roba {
 		this.grupaRobe = grupaRobe;
 	}
 
-	public Set<StavkaCenovnika> getStavkeCenovnika() {
+	public Set<StavkeCenovnika> getStavkeCenovnika() {
 		return stavkeCenovnika;
 	}
 
-	public void setStavkeCenovnika(Set<StavkaCenovnika> stavkeCenovnika) {
+	public void setStavkeCenovnika(Set<StavkeCenovnika> stavkeCenovnika) {
 		this.stavkeCenovnika = stavkeCenovnika;
 	}
 

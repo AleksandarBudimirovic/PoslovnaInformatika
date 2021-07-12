@@ -5,7 +5,7 @@ import java.util.Set;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.lama.LamaProject.main.GrupaRobe;
-import com.lama.LamaProject.main.StavkaCenovnika;
+import com.lama.LamaProject.main.StavkeCenovnika;
 import com.lama.LamaProject.main.StavkaIzlaznaFaktura;
 
 import lombok.AllArgsConstructor;
@@ -24,7 +24,7 @@ public class RobaDTO {
 	@JsonIgnore
 	private GrupaRobe grupaRobe;
 	@JsonIgnore
-	private Set<StavkaCenovnika> stavkeCenovnika = new HashSet<>();
+	private Set<StavkeCenovnika> stavkeCenovnika = new HashSet<>();
 	@JsonIgnore
 	private Set<StavkaIzlaznaFaktura> stavkeFakture = new HashSet<>();
 
@@ -35,7 +35,7 @@ public class RobaDTO {
 	}
 
 	public RobaDTO(long id, String nazivRobe, String jedinicaMere, GrupaRobe grupaRobe,
-			Set<StavkaCenovnika> stavkeCenovnika, Set<StavkaIzlaznaFaktura> stavkeFakture, boolean obrisano) {
+			Set<StavkeCenovnika> stavkeCenovnika, Set<StavkaIzlaznaFaktura> stavkeFakture, boolean obrisano) {
 		super();
 		this.id = id;
 		this.nazivRobe = nazivRobe;
@@ -70,11 +70,11 @@ public class RobaDTO {
 		this.grupaRobe = grupaRobe;
 	}
 
-	public Set<StavkaCenovnika> getStavkeCenovnika() {
+	public Set<StavkeCenovnika> getStavkeCenovnika() {
 		return stavkeCenovnika;
 	}
 
-	public void setStavkeCenovnika(Set<StavkaCenovnika> stavkeCenovnika) {
+	public void setStavkeCenovnika(Set<StavkeCenovnika> stavkeCenovnika) {
 		this.stavkeCenovnika = stavkeCenovnika;
 	}
 

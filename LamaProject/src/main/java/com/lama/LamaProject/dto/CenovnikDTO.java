@@ -6,7 +6,7 @@ import java.util.Set;
 
 import com.lama.LamaProject.main.PoslovniPartner;
 import com.lama.LamaProject.main.Preduzece;
-import com.lama.LamaProject.main.StavkaCenovnika;
+import com.lama.LamaProject.main.StavkeCenovnika;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -26,12 +26,12 @@ public class CenovnikDTO {
 
 	private Preduzece preduzece;
 
-	private Set<StavkaCenovnika> cene = new HashSet<StavkaCenovnika>();
+	private Set<StavkeCenovnika> cene = new HashSet<StavkeCenovnika>();
 
 	private boolean obrisano;
 
 	public CenovnikDTO(Long id, Date pocetakRokaTrajanja, Date krajRokaTrajanja, PoslovniPartner poslovniPartner,
-			Preduzece preduzece, Set<StavkaCenovnika> cene, boolean obrisano) {
+			Preduzece preduzece, Set<StavkeCenovnika> cene, boolean obrisano) {
 		super();
 		Id = id;
 		this.pocetakRokaTrajanja = pocetakRokaTrajanja;
@@ -83,11 +83,11 @@ public class CenovnikDTO {
 		this.preduzece = preduzece;
 	}
 
-	public Set<StavkaCenovnika> getCene() {
+	public Set<StavkeCenovnika> getCene() {
 		return cene;
 	}
 
-	public void setCene(Set<StavkaCenovnika> cene) {
+	public void setCene(Set<StavkeCenovnika> cene) {
 		this.cene = cene;
 	}
 

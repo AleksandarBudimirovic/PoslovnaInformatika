@@ -24,7 +24,7 @@ import com.lama.LamaProject.dto.StavkaCenovnikaDTO;
 import com.lama.LamaProject.main.Cenovnik;
 import com.lama.LamaProject.main.PoslovniPartner;
 import com.lama.LamaProject.main.Preduzece;
-import com.lama.LamaProject.main.StavkaCenovnika;
+import com.lama.LamaProject.main.StavkeCenovnika;
 import com.lama.LamaProject.service.CenovnikService;
 import com.lama.LamaProject.service.PoslovniPartnerServiceS;
 import com.lama.LamaProject.service.PreduzeceServiceS;
@@ -112,7 +112,7 @@ public class CenovnikController {
 		Cenovnik cenovnik = cenovnikService.findOne(idcenovnika);
 		model.addAttribute("listRoba", robaToRobaDTO.konvertujEntityToDto(robaService.findAll()));
 		model.addAttribute("cenovnik", cenovnikToCenovnikDTO.konvertujEntityToDto(cenovnik));
-		List<StavkaCenovnika> stavkeCenovnika = stavkaCenovnikaService.findStavkeCenovnikaByCenovnikId(idcenovnika);
+		List<StavkeCenovnika> stavkeCenovnika = stavkaCenovnikaService.findStavkeCenovnikaByCenovnikId(idcenovnika);
 		List<StavkaCenovnikaDTO> stavkeCenovnikaDto = stavkaCenovnikaToStavkaCenovnikaDTO.konvertujEntityToDto(stavkeCenovnika);
         model.addAttribute("stavkeCenovnika", stavkeCenovnikaDto);
 		return "cenovnik_detalji";
