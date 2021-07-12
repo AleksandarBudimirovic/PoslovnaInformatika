@@ -25,6 +25,7 @@ import com.lama.LamaProject.service.OtpremnicaServiceS;
 
 
 @Service
+@Transactional
 public class OtpremnicaImpl implements OtpremnicaServiceS {
 	
 	@Autowired
